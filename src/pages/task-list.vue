@@ -3,15 +3,15 @@
     <div class="flex justify-center">
       <div class="card-container">
         <h3>Todo List</h3>
-
-        <task-view
-          v-for="(task, index) in taskList"
-          :key="index"
-          :task="task"
-          @delete="deleteTask(task)"
-          @edit="showEditor(task.id)"
-        />
-
+        <transition-group name="list">
+          <task-view
+            v-for="(task) in taskList"
+            :key="task.id"
+            :task="task"
+            @delete="deleteTask(task)"
+            @edit="showEditor(task.id)"
+          />
+        </transition-group>
         <task-editor
           :visible="editorVisibility"
           :value="selectedTask"
@@ -77,5 +77,12 @@ export default {
 <style>
 .card-container {
   width: 700px;
+}
+.list-leave-active {
+  transition: 0.5s cubic-bezier(1, 0.5, 0.8, 1);
+}
+.list-leave-to {
+  transform: translateX(100px);
+  opacity: 0;
 }
 </style>

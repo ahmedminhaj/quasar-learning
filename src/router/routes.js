@@ -5,6 +5,7 @@ import BlogList from "pages/blog-list"
 import IndexView from "pages/Index"
 import customLayout from "layouts/custom-layout"
 import BlogEditor from "pages/blog-editor"
+import TestAnime from "pages/test-animation"
 
 const routes = [{
     path: '/',
@@ -34,6 +35,11 @@ const routes = [{
         path: 'blog-editor',
         name:"blog-editor",
         component: BlogEditor
+      },
+      {
+        path: 'anime',
+        name: 'anime',
+        component: TestAnime
       }
     ]
   },

@@ -2,10 +2,10 @@ export default {
   state: {
     visibleEditor: false,
     taskList: [
-      { title: "JavaScript", id: 0, dueDate: "24 Sep 2020" },
-      { title: "VueJS", id: 1, dueDate: "26 Sep 2020" },
-      { title: "Quasar", id: 2, dueDate: "29 Sep 2020" },
-      { title: "Dart", id: 3, dueDate: "12 Oct 2020" }
+      { title: "JavaScript", id: 0, dueDate: "24 Sep 2020"},
+      { title: "VueJS", id: 1, dueDate: "26 Sep 2020"},
+      { title: "Quasar", id: 2, dueDate: "29 Sep 2020"},
+      { title: "Dart", id: 3, dueDate: "12 Oct 2020"}
     ],
     selectedId: 0
   },
@@ -49,7 +49,8 @@ export default {
         state.taskList[newId] = {
           title: task.title,
           id: (newId === undefined) ? 0 : newId,
-          dueDate: task.dueDate
+          dueDate: task.dueDate,
+          delete: false
         };
         state.visibleEditor = false
       }

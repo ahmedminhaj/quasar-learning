@@ -37,34 +37,6 @@ export default Vue.extend({
 })
 </script>
 
-<!--
-<script>
-import blogForm from "components/blog-form";
-export default {
-  components: { blogForm },
-  data() {
-    return {
-      focusKey: false
-    };
-  },
-  computed: {
-    newBlog() {
-      return undefined;
-    }
-  },
-  methods: {
-    processInputFill() {
-      focusKey != focusKey;
-    },
-    publishBlog(blog$) {
-      this.$store.dispatch("publishNewBlog", blog$);
-      this.$router.push({ name: "blog" });
-    }
-  }
-};
-</script>
--->
-
 <style>
 .editor-container {
   width: 800px;

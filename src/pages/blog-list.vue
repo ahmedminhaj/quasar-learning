@@ -1,10 +1,11 @@
+
 <template>
   <q-page padding>
     <div class="flex justify-center">
       <div class="blog-container">
         <h3>Blog List</h3>
-        
-        <q-tabs  dense align="left" class="bg-blue-grey-9 text-grey-1 shadow-2 q-mt-md q-mr-sm">
+
+        <q-tabs dense align="left" class="bg-blue-grey-9 text-grey-1 shadow-2 q-mt-md q-mr-sm">
           <q-tab v-for="(tag, index) in listOfTag" :key="index" @click="tagFilter(tag)">{{tag}}</q-tab>
         </q-tabs>
         <q-card class="q-mt-md q-mr-sm text-blue-grey-9">
@@ -14,13 +15,17 @@
             </template>
           </q-input>
         </q-card>
-        <blog-card
-          v-for="(blog, blogIdx) in filteredBlogList"
-          :key="`blog-${blogIdx}`"
-          :blog="blog"
-        ></blog-card>
-
-        <q-btn class="q-mt-md q-mr-sm bg-blue-grey-9 text-grey-2" icon="add" label="write blog" @click="toBlogeditor"/>
+          <blog-card
+            v-for="(blog, blogIdx) in filteredBlogList"
+            :key="`blog-${blogIdx}`"
+            :blog="blog"
+          ></blog-card>
+        <q-btn
+          class="q-mt-md q-mr-sm bg-blue-grey-9 text-grey-2"
+          icon="add"
+          label="write blog"
+          @click="toBlogeditor"
+        />
       </div>
     </div>
   </q-page>
@@ -28,8 +33,8 @@
 
 <script>
 import blogCard from "components/blog-card";
-export default {
 
+export default {
   components: {
     blogCard
   },
@@ -58,9 +63,10 @@ export default {
       console.log(tag);
       this.$store.dispatch("filteredByTag", tag);
     },
-    toBlogeditor(){
-      this.$router.push({name:"blog-editor"})
-    }
+    toBlogeditor() {
+      this.$router.push({ name: "blog-editor" });
+    },
+    
   }
 };
 </script>

@@ -45,7 +45,8 @@ export default {
         { name: "Vue Home", icon: "home", path: "hello" },
         { name: "Test View", icon: "code", path: "test" },
         { name: "Help", icon: "help", path: "idx" },
-        { name: "Contact", icon: "phone", path: "idx" }
+        { name: "Contact", icon: "phone", path: "idx" },
+        { name: "Animation", icon: "movie", path: "anime" }
       ]
     };
   }
